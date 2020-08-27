@@ -1,38 +1,38 @@
 module.exports = {
+  siteMetadata: {
+    title: 'MDB React Starter',
+    description: 'MDB React starter for material design landing page',
+    siteUrl: 'https://gatsby-starter.mdbootstrap.com',
+    author: 'anna-morawska',
+  },
   plugins: [
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `react-hook-form`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-svgr`,
     {
-      resolve: 'gatsby-source-cosmicjs',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        bucketSlug: process.env.COSMIC_BUCKET,
-        objectTypes: ['posts','settings'],
-        apiAccess: {
-          read_key: process.env.COSMIC_READ_KEY,
-        },
-        localMedia: true
-      }
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        name: `gatsby-material-design-for-bootstrap`,
+        short_name: `MDB starter`,
+        start_url: `/`,
+        background_color: `#4B5EB8`,
+        theme_color: `#68008C`,
+        display: `standalone`,
+        icon: `${__dirname}/src/images/mdb-react-small.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.app/offline
+    // 'gatsby-plugin-offline',
   ],
 }

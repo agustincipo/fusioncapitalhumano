@@ -1,0 +1,37 @@
+title: Coaching Profesional
+imageUrl: url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')
+category: Marketing
+color: orange
+botonColor: deep-orange
+content:
+  A través del Coaching profesional buscamos lograr un aprendizaje en donde se acompaña
+  a la persona a reflexionar, a cuestionar y cuestionarse el modo de pensar, de comunicarse,
+  de observar, de actuar, para aprender nuevas respuestas ante los viejos y nuevos desafíos.
+  Trabajaremos en desarrollar nuevas actitudes
+  y aptitudes para generar nuevas ideas, nuevas posibilidades y descubrir nuevos significados
+modal:
+  - section:
+      title: ¿En qué consiste?
+      content: El Diagnóstico Organizacional consiste en
+        una revisión de las estructuras formales e informales de la empresa,
+        su comportamiento organizacional, la misión, visión y valores y el grado
+        en el que estos son conocidos y compartidos por todos sus miembros.
+      items:
+        - item: 
+  - section:
+      title: ¿Cuándo iniciar un proceso de Diagnostico Organizacional?
+      content:
+        La condición principal y clave es que exista intención de cambio y compromiso.
+        Ese será el motor de nuestro trabajo.
+        También es necesario que los miembros de la empresa estén dispuestos
+        a abrirse y a brindar la información que se requiera para iniciar el proceso de transformación.
+        Parte de éxito del Diagnostico Organizacional y de nuestro
+        trabajo está dado por el grado de colaboración.
+      items:
+        - item: 
+  - section:
+      title: ¿Cuándo iniciar un proceso de Diagnostico Organizacional?
+      content:
+      items:
+        - item: sadasdas
+        - item: asdasdas
