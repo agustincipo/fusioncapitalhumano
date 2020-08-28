@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import navbarStyles from './navbar.module.scss'
 
 import {
@@ -49,7 +48,6 @@ class NavbarPage extends Component {
       />
     )
     return (
-        <Router>
           <div>
             <MDBNavbar
               color="white"
@@ -110,7 +108,6 @@ class NavbarPage extends Component {
             </MDBNavbar>
             {collapsed && overlay}
           </div>
-        </Router>
     )
   }
 }
