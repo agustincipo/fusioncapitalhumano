@@ -15,10 +15,10 @@ const IndexPage = () => {
           <SEO
             title="Home"
             keywords={[
-              `gatsby`,
-              `MDBReact`,
-              `react`,
-              `Material Design For Bootstrap`,
+              `fusion`,
+              `capital`,
+              `humano`,
+              `fusion capital humano`,
             ]}
           />
           <Layout>
