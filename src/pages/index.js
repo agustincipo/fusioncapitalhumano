@@ -8,6 +8,7 @@ import ContactForm from '../components/contactForm'
 import { MDBRow } from 'mdbreact'
 import ServicesSection from '../components/servicesSection'
 import Footer from '../components/footer'
+import PdfUpload from '../components/pdfUpload'
 
 const IndexPage = () => {
     return (
@@ -26,6 +27,7 @@ const IndexPage = () => {
           <main>
             <TeamSection />
             <ContactForm />
+            <PdfUpload/>
           </main>
           </Layout>
       </>
