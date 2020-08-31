@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-  MDBBtn,
-  MDBContainer,
-  MDBInput,
-} from 'mdbreact'
-import { Amplify, Storage } from 'aws-amplify'
+
 export default class PdfUpload extends React.Component {
   API_ENDPOINT =
     'https://t7zze0mr4i.execute-api.us-east-2.amazonaws.com/default/getPresignedURL'
