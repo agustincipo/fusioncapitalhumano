@@ -3,14 +3,16 @@
     display: flex;
     list-style-type: none;
     margin: 0 auto;
-    margin-right: 5px;
+    margin-right: -100px;
+
 }
 
 .nav-item  {
-    color:#333333;
+    display: inline-block;
+    padding:18px 6px 8px 6px;
+    color:rgb(0, 0, 0);
     font-size: .99rem;
     margin-right: 1.3em;
-    text-decoration: none
 }
 
 .nav-item:hover{

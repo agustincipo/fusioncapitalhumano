@@ -30,84 +30,78 @@ class NavbarPage extends Component {
     })
   }
 
-  componentDidMount() {
-    document.querySelector('nav').style.height = '70px'
-  }
-
-  componentWillUnmount() {
-    document.querySelector('nav').style.height = 'auto'
-  }
-
   render() {
     const { collapsed } = this.state
     const overlay = (
       <div
         id="sidenav-overlay"
-        style={{ backgroundColor: 'white' }}
+        style={{ backgroundColor: 'transparent' }}
         onClick={this.handleTogglerClick}
       />
     )
     return (
-          <div>
-            <MDBNavbar
-              color="white"
-              light
-              expand="md"
-              fixed="top"
-              scrolling
-               //Cambiar por blanco
-            >
-              <MDBContainer>
-                <MDBNavbarBrand>
-                  <Link to="/" className="navbar-brand">
-                    <Logo />
+      <div>
+        <MDBNavbar
+          style={{ height: '60px' }}
+          style={{ padding: '0px 0px 0px 0px' }}
+          color="white"
+          light
+          expand="md"
+          fixed="top"
+          scrolling
+          //Cambiar por blanco
+        >
+          <MDBContainer>
+            <MDBNavbarBrand>
+              <Link to="/" className="navbar-brand">
+                <Logo />
+              </Link>{' '}
+            </MDBNavbarBrand>
+            <MDBNavbarToggler onClick={this.handleTogglerClick} />
+            <MDBCollapse isOpen={collapsed} navbar>
+              <MDBNavbarNav right className={navbarStyles.navList}>
+                <MDBNavItem active>
+                  <Link
+                    className={navbarStyles.navItem}
+                    activeClassName={navbarStyles.activeNavItem}
+                    to="/"
+                  >
+                    Home
+                  </Link>
+                </MDBNavItem>
+                <MDBNavItem >
+                  <Link
+                    className={navbarStyles.navItem}
+                    activeClassName={navbarStyles.activeNavItem}
+                    to="/pymes"
+                  >
+                    Pymes
+                  </Link>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <Link
+                    className={navbarStyles.navItem}
+                    activeClassName={navbarStyles.activeNavItem}
+                    to="/candidatos"
+                  >
+                    Candidatos
                   </Link>{' '}
-                </MDBNavbarBrand>
-                <MDBNavbarToggler onClick={this.handleTogglerClick} />
-                <MDBCollapse  isOpen={collapsed} navbar>
-                  <MDBNavbarNav right  className={navbarStyles.navList} >
-                    <MDBNavItem active>
-                      <Link
-                        className={navbarStyles.navItem}
-                        activeClassName={navbarStyles.activeNavItem}
-                        to="/"
-                      >
-                        Home
-                      </Link>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <Link
-                        className={navbarStyles.navItem}
-                        activeClassName={navbarStyles.activeNavItem}
-                        to="/pymes"
-                      >
-                        Pymes
-                      </Link>
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <Link
-                        className={navbarStyles.navItem}
-                        activeClassName={navbarStyles.activeNavItem}
-                        to="/candidatos"
-                      >
-                        Candidatos
-                      </Link>{' '}
-                    </MDBNavItem>
-                    <MDBNavItem>
-                      <Link
-                        className={navbarStyles.navItem}
-                        activeClassName={navbarStyles.activeNavItem}
-                        to="/candidatos"
-                      >
-                        Contacto
-                      </Link>{' '}
-                    </MDBNavItem>
-                  </MDBNavbarNav>
-                </MDBCollapse>
-              </MDBContainer>
-            </MDBNavbar>
-            {collapsed && overlay}
-          </div>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <Link
+                    className={navbarStyles.navItem}
+                    activeClassName={navbarStyles.activeNavItem}
+                    to="/candidatos"
+                  >
+                    Contacto
+                  </Link>{' '}
+                </MDBNavItem>
+              </MDBNavbarNav>
+            </MDBCollapse>
+          </MDBContainer>
+        </MDBNavbar>
+        {collapsed && overlay}
+      </div>
     )
   }
 }
