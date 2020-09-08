@@ -16,7 +16,7 @@ const TeamPage = () => {
           <MDBRow>
 
 
-            <MDBCol md="4" className="mb-md-0 mb-5">
+            <MDBCol md="6" className="mb-md-0 mb-5">
               <MDBAvatar
                 tag="img"
                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg"
@@ -39,7 +39,7 @@ const TeamPage = () => {
               </ul>
             </MDBCol>
 
-            <MDBCol md="4" className="mb-md-0 mb-5">
+            <MDBCol md="6" className="mb-md-0 mb-5">
               <MDBAvatar
                 tag="img"
                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg"
@@ -65,7 +65,7 @@ const TeamPage = () => {
                 </a>
               </ul>
             </MDBCol>
-            <MDBCol md="4" className="mb-md-0 mb-5">
+{/*             <MDBCol md="4" className="mb-md-0 mb-5">
               <MDBAvatar
                 tag="img"
                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg"
@@ -89,7 +89,7 @@ const TeamPage = () => {
                   <MDBIcon fab icon="instagram" className="blue-text" />
                 </a>
               </ul>
-            </MDBCol>
+            </MDBCol> */}
           </MDBRow>
         </MDBCardBody>
       </MDBCard>

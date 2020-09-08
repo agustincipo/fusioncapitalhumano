@@ -4,10 +4,6 @@ import Intro from '../components/intro'
 import SEO from '../components/seo'
 import TeamSection from '../components/teamSection'
 import ContactForm from '../components/contactForm'
-
-import { MDBRow } from 'mdbreact'
-import ServicesSection from '../components/servicesSection'
-import Footer from '../components/footer'
 import PdfUpload from '../components/pdfUpload'
 
 const IndexPage = () => {
@@ -27,7 +23,6 @@ const IndexPage = () => {
           <main>
             <TeamSection />
             <ContactForm />
-            <PdfUpload/>
           </main>
           </Layout>
       </>

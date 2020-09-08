@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-
+import { MDBFileInput } from "mdbreact";
 export default class PdfUpload extends React.Component {
   API_ENDPOINT =
       'https://pyehmuxkh4.execute-api.us-east-1.amazonaws.com/default/uploadPDF'
@@ -10,45 +10,35 @@ export default class PdfUpload extends React.Component {
     fileName: '',
   }
 
-  handleChange = e => {
-    const file = e.target.files[0]
+  handleChange = files => {
+    this.setState({file: files[0] } , () => console.log(this.state))
 
     this.setState({
-      fileUrl: URL.createObjectURL(file),
-      file,
-      fileName: file.name,
+      fileUrl: URL.createObjectURL(files[0]),
+      file: files[0],
+      fileName: files[0].name,
     })
+    this.saveFile();
   }
 
   saveFile = async () => {
     const response = await axios({
       method: 'GET',
-      url: 'https://pyehmuxkh4.execute-api.us-east-1.amazonaws.com/default/uploadPDF'
+      url: this.API_ENDPOINT
     })
-    console.log(response)
-
-    console.log('Response: ', response.url)
     console.log('Uploading: ', this.state.file)
-
-    let blobData = new Blob([this.state.file], { type: 'image/jpeg' })
-    console.log('Uploading to: ', response.url)
-    console.log('BLob', blobData)
+    let blobData = new Blob([this.state.file], { type: 'application/pdf' })
     const result = await fetch(response.data.uploadURL, {
       method: 'PUT',
       body: blobData
     })
-    console.log('Result: ', result)
-
-    // Final URL for the user doesn't need the query string params
   }
 
   render() {
     return (
-      <div className="border-top my-5">
-        <input type="file" onChange={this.handleChange}></input>
-        <img src={this.state.fileUrl} />
-        <button onClick={this.saveFile}> Save File</button>
+      <div className="my-5">
+        <MDBFileInput btnColor="secondary" btnTitle="Subir archivo PDF" textFieldTitle="Envianos tu CV!" getValue={this.handleChange}/>
       </div>
     )
   }
-}
+} 

@@ -7,7 +7,8 @@ import {
   MDBContainer,
   MDBInput,
 } from 'mdbreact'
-export default class ContactForm extends React.Component {
+import PdfUpload from './pdfUpload'
+export default class ContactFormCandidatos extends React.Component {
   state = {
     name: '',
     email: '',
@@ -60,18 +61,15 @@ export default class ContactForm extends React.Component {
 
   render() {
     return (
-      <div id="section1" className="border-top my-5">
-        <MDBContainer border>
-          <MDBRow border>
-            <MDBCol border md="12">
+      <div id="section1" className="my-5">
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="12">
               <form
                 className="needs-validation"
                 onSubmit={this.handleSubmit}
                 noValidate
               >
-                <h2 className="text-center h1-responsive font-weight-bold my-5">
-                  Contactanos
-                </h2>
                 <div className="grey-text">
                   <MDBInput
                     label="Nombre"
@@ -117,6 +115,7 @@ export default class ContactForm extends React.Component {
                       Debes ingresar un mensaje
                     </div>
                   </MDBInput>
+                  <PdfUpload/>
                 </div>
                 <div className="text-center">
                   <MDBBtn type="submit" color="secondary" rounded>

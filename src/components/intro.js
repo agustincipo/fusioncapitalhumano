@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
+
+import introStyles from './intro.module.scss'
 import {
   MDBMask,
-  MDBAnimation,
   MDBRow,
   MDBCol,
   MDBBtn,
@@ -12,7 +13,6 @@ import {
 } from 'mdbreact'
 import './intro.css'
 import portada from '../images/portada.jpg'
-import Navbar from './navbar'
 
 const Intro = () => {
   return (
@@ -24,9 +24,11 @@ const Intro = () => {
       >
         <MDBRow style={{ margin: '50px 0px 0px 0px' }}>
           <MDBCol md="12" className="mb-4 white-text text-center">
-            <h3 className="display-4 font-weight-bold mb-0 pt-md-5">
-              Transformá tu Pyme{' '}
-            </h3>
+            <div className={introStyles.title}>
+              <h3 className="display-4 font-weight-bold mt-10  mb-0 pt-md-5">
+                Transformá tu Pyme{' '}
+              </h3>
+            </div>
             <hr className="hr-light my-4 w-75" />
             <h4 className="subtext-header mt-2 mb-4">
               Nuestro propósito es brindar servicios a Pymes que busquen crecer,
@@ -34,9 +36,9 @@ const Intro = () => {
               brindando y desarrollando herramientas que permitan agregarle
               valor a tu Empresa.
             </h4>
-            <MDBBtn rounded color="secondary">
+            <Link to="/pymes "><MDBBtn rounded color="secondary">
               Pymes <MDBIcon icon="sitemap" />
-            </MDBBtn>
+            </MDBBtn></Link>
             <MDBBtn rounded color="secondary">
               Candidatos <MDBIcon icon="user-friends" />
             </MDBBtn>

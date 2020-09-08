@@ -1,21 +1,16 @@
 import React, { Component } from 'react'
 import navbarStyles from './navbar.module.scss'
-
 import {
   MDBNavbar,
   MDBNavbarBrand,
   MDBNavbarNav,
   MDBNavItem,
-  MDBNavLink,
   MDBNavbarToggler,
   MDBCollapse,
-  MDBFormInline,
   MDBContainer,
-  MDBIcon,
+  MDBSmoothScroll,
 } from 'mdbreact'
-
 import { Link } from 'gatsby'
-import CustomNavLink from './customLink'
 import { ReactComponent as Logo } from '../images/logo.svg'
 
 class NavbarPage extends Component {
@@ -69,7 +64,7 @@ class NavbarPage extends Component {
                     Home
                   </Link>
                 </MDBNavItem>
-                <MDBNavItem >
+                <MDBNavItem>
                   <Link
                     className={navbarStyles.navItem}
                     activeClassName={navbarStyles.activeNavItem}
@@ -88,13 +83,13 @@ class NavbarPage extends Component {
                   </Link>{' '}
                 </MDBNavItem>
                 <MDBNavItem>
-                  <Link
+                  <MDBSmoothScroll
                     className={navbarStyles.navItem}
                     activeClassName={navbarStyles.activeNavItem}
-                    to="/candidatos"
+                    to="section1"
                   >
                     Contacto
-                  </Link>{' '}
+                  </MDBSmoothScroll>
                 </MDBNavItem>
               </MDBNavbarNav>
             </MDBCollapse>
