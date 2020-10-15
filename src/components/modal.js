@@ -45,6 +45,7 @@ class ModalPage extends Component {
               return [
                 <h4 className="black-text"> {data.section.title} </h4>,
                 <p className="black-text"> {data.section.content} </p>,
+                data.section.items?(
                 <ul>
                 {
                 data.section.items.map(item => {
@@ -55,6 +56,7 @@ class ModalPage extends Component {
                   )
                 })}
                 </ul>
+                ):null
               ]
             })}
 

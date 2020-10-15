@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   MDBRow,
   MDBCol,
@@ -6,15 +6,30 @@ import {
   MDBBtn,
   MDBContainer,
   MDBInput,
+  MDBFileInput,
 } from 'mdbreact'
-import PdfUpload from './pdfUpload'
-export default class ContactFormCandidatos extends React.Component {
+import axios from 'axios'
+
+class ContactFormCandidatos extends Component {
+  fileInput = React.createRef()
+  //Refactor 1 = state = {name:{value,valid}} y asi con todos
+
   state = {
     name: '',
     email: '',
     question: '',
+    file: '',
+    fileURL: '',
+    fileName: '',
+    nameValid: false,
+    emailValid: false,
+    questionValid: false,
+    fileValid: null,
   }
-  FAKE_GATEWAY_URL =
+  UPLOAD_FILE_ENDPOINT =
+    'https://pyehmuxkh4.execute-api.us-east-1.amazonaws.com/default/uploadPDF'
+
+  SEND_MAIL_ENDPOINT =
     'https://bvjewnsi2k.execute-api.sa-east-1.amazonaws.com/dev'
 
   handleInputChange = event => {
@@ -25,23 +40,35 @@ export default class ContactFormCandidatos extends React.Component {
     this.setState({
       [name]: value,
     })
+
+    const valid = name + 'Valid'
+    this.setState({
+      [valid]: target.validity.valid,
+    })
   }
 
   handleSubmit = event => {
     event.preventDefault()
     event.target.className += ' was-validated'
-    if (event.target.noValidate) {
-    } else {
-      const data = {
-        name: this.state.name,
-        esmail: this.state.email,
-        question: this.state.question,
-      }
-      try {
-        ;(async () => {
-          const response = await fetch(
-            'https://bvjewnsi2k.execute-api.sa-east-1.amazonaws.com/de',
-            {
+    if (
+      this.state.emailValid &&
+      this.state.nameValid &&
+      this.state.questionValid &&
+      this.state.fileValid
+    ) {
+      this.saveFile().then(result => {
+        console.log('RESULT from saveFile()',result)
+        this.setState({fileURL:result.url})
+
+      })
+      this.sendMail(this.data).then(response => {
+        console.log('Response FINAL ====>', response)
+      })
+      /*         try {
+          ;(async () => {
+            console.log('Data:', this.data)
+
+            const response = await fetch(this.SEND_MAIL_ENDPOINT, {
               method: 'POST',
               mode: 'cors',
               cache: 'no-cache',
@@ -49,17 +76,78 @@ export default class ContactFormCandidatos extends React.Component {
               headers: {
                 'Content-type': 'application/json; charset=UTF-8',
               },
-            }
-          )
-          console.log(response)
-        })()
-      } catch (error) {
-        console.log(error)
-      }
+            })
+            console.log(response)
+          })()
+        } catch (error) {
+          console.log(error)
+        }
+      }) 
+
+    }*/
     }
   }
+  sendMail = async () => {
+    const data = {
+      name: this.state.name,
+      email: this.state.email,
+      question: this.state.question,
+      urlPDF: this.state.fileURL,
+    }
+    const response = await fetch(this.SEND_MAIL_ENDPOINT, {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+    console.log(response)
+    return response
+  }
 
+  handleFileChange = files => {
+    if (files[0].size < 10000000 && files[0].type === 'application/pdf') {
+      this.setState({
+        fileUrl: URL.createObjectURL(files[0]),
+        file: files[0],
+        fileName: files[0].name,
+        fileValid: true,
+      })
+    } else {
+      this.setState({
+        fileValid: false,
+      })
+    }
+  }
+  /*Refactor que pasa en Mozilla? No andaba el blobData*/
+  saveFile = async () => {
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: this.UPLOAD_FILE_ENDPOINT,
+      })
+      this.setState({ fileName: response.data.photoFilename })
+      console.log('Uploading: ', this.state.file)
+      console.log('Size: ', this.state.file.size)
+      if (this.state.fileValid && this.state.fileValid != null) {
+        let blobData = new Blob([this.state.file], { type: 'application/pdf' })
+        const result = await fetch(response.data.uploadURL, {
+          method: 'PUT',
+          body: blobData,
+        })
+        this.setState({fileURL:result.url})
+      } else {
+        console.log('INVALID FILE ')
+      }
+    } catch (e) {
+      console.log('invalid file', e)
+    }
+  }
   render() {
+    const hello = 'Say Hello to learning Props/State in React!'
+
     return (
       <div id="section1" className="my-5">
         <MDBContainer>
@@ -115,7 +203,29 @@ export default class ContactFormCandidatos extends React.Component {
                       Debes ingresar un mensaje
                     </div>
                   </MDBInput>
-                  <PdfUpload/>
+
+                  <MDBFileInput
+                    /* className="invalid" Muestra linea roja en el input */
+                    className={
+                      this.state.fileValid
+                        ? 'valid'
+                        : this.state.fileValid != null
+                        ? 'invalid'
+                        : ''
+                    }
+                    required
+                    btnColor="secondary"
+                    btnTitle="Subir archivo PDF"
+                    textFieldTitle="Envianos tu CV!"
+                    getValue={this.handleFileChange}
+                  >
+                    <div className="invalid-feedback">Archivo invalido</div>
+                  </MDBFileInput>
+                  <FileError
+                    messagge={hello}
+                    fileValid={this.state.fileValid}
+                  />
+                  {/* <PdfUpload onClick={this.toggleAddFile}/> */}
                 </div>
                 <div className="text-center">
                   <MDBBtn type="submit" color="secondary" rounded>
@@ -131,3 +241,12 @@ export default class ContactFormCandidatos extends React.Component {
     )
   }
 }
+
+const FileError = ({ messagge, fileValid }) =>
+  !fileValid && fileValid != null ? (
+    <div class="alert alert-danger" role="alert">
+      Archivo invalido (debe ser formato PDF y menor a 10MB!)
+    </div>
+  ) : null
+
+export default ContactFormCandidatos

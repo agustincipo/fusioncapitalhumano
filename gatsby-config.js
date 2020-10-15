@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'MDB React Starter',
-    description: 'MDB React starter for material design landing page',
-    siteUrl: 'https://gatsby-starter.mdbootstrap.com',
-    author: 'anna-morawska',
+    title: 'Fusion Capital Humano',
+    description: 'Sitio Web oficial consultora de Recursos Humanos',
+    siteUrl: 'https://www.linkedin.com/in/agustin-cipollone/',
+    author: 'Agustin Cipollone',
+    icon: `${__dirname}/src/images/favicon.jpg`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,7 +29,7 @@ module.exports = {
         background_color: `#4B5EB8`,
         theme_color: `#68008C`,
         display: `standalone`,
-        icon: `${__dirname}/src/images/mdb-react-small.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/src/images/favicon.jpg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

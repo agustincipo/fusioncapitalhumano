@@ -12,26 +12,24 @@ content:
 modal:
   - section:
       title: ¿En qué consiste?
-      content: El Diagnóstico Organizacional consiste en
-        una revisión de las estructuras formales e informales de la empresa,
-        su comportamiento organizacional, la misión, visión y valores y el grado
-        en el que estos son conocidos y compartidos por todos sus miembros.
-      items:
-        - item: 
-  - section:
-      title: ¿Cuándo iniciar un proceso de Diagnostico Organizacional?
       content:
-        La condición principal y clave es que exista intención de cambio y compromiso.
-        Ese será el motor de nuestro trabajo.
-        También es necesario que los miembros de la empresa estén dispuestos
-        a abrirse y a brindar la información que se requiera para iniciar el proceso de transformación.
-        Parte de éxito del Diagnostico Organizacional y de nuestro
-        trabajo está dado por el grado de colaboración.
-      items:
-        - item: 
+        Se trabaja en forma de sesiones individuales en donde se establece un
+        objetivo a trabajar por sesión buscando centrarse en la toma de conciencia
+        sobre uno mismo, sus emociones, su lenguaje.
+        Tener conciencia de uno mismo permite poder estar alineado con nuestro objetivo, el cual es el motor para comenzar nuevas acciones.
+        El coach acompaña este proceso con diferentes técnicas desde escucha activa,
+        preguntas esclarecedoras, actividades en sesión que ayude a poder cambiar el observador que es cada uno de su realidad.
+
   - section:
-      title: ¿Cuándo iniciar un proceso de Diagnostico Organizacional?
+      title: ¿Cuándo se puede iniciar un Proceso de Coaching?
+      content:
+        Las circunstancias para que una persona decida iniciar un proceso de coaching pueden ser muy diversas, como un cambio a nivel personal, resolver un conflicto interpersonal, alcanzar un objetivo profesional, como también aquellas que deseen mejorar o potenciar habilidades.
+        Lo fundamental de este proceso es estar comprometido, abierto al aprendizaje y ser el principal responsable de este cambio.
+
+  - section:
+      title: Método y técnicas utilizadas
       content:
       items:
-        - item: sadasdas
-        - item: asdasdas
+        - item: Escucha activa.
+        - item: Preguntas Esclarecedoras.
+        - item: Actividades prácticas en Sesión.  

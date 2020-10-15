@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-fusioncapitalhumano-dev-123948-authRole",
+            "UnauthRoleArn": "arn:aws:iam::582083719710:role/amplify-fusioncapitalhumano-dev-123948-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::582083719710:role/amplify-fusioncapitalhumano-dev-123948-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-fusioncapitalhumano-dev-123948-deployment",
+            "UnauthRoleName": "amplify-fusioncapitalhumano-dev-123948-unauthRole",
+            "StackName": "amplify-fusioncapitalhumano-dev-123948",
+            "StackId": "arn:aws:cloudformation:us-east-1:582083719710:stack/amplify-fusioncapitalhumano-dev-123948/e15f8730-ea0d-11ea-a8ba-121b03ae900d",
+            "AmplifyAppId": "d1oqv6tme4wucd"
+        },
+        "categories": {
+            "auth": {
+                "fusioncapitalhumano3f71e19f": {}
+            }
+        }
+    }
+}

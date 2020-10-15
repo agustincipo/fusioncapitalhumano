@@ -3,19 +3,18 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { MDBRow } from 'mdbreact'
 import ServicesSection from '../components/servicesSection'
-import Modal from '../components/modal'
 
 class PymesPage extends Component {
   render() {
     return (
       <>
         <SEO
-          title="Home"
+          title="Servicios"
           keywords={[
-            `gatsby`,
-            `MDBReact`,
-            `react`,
-            `Material Design For Bootstrap`,
+            `RRHH`,
+            `Consultoria RRHH`,
+            `Servicios RRHH`,
+            `Fusion Capital Humano servicios`,
           ]}
         />
         <Layout>

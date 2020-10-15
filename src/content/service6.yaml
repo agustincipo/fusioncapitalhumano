@@ -13,17 +13,24 @@ content: El Análisis de Clima Organizacional es el estudio que se
 modal:
   - section:
       title: ¿En qué consiste?
-      content: El Diagnóstico Organizacional consiste en
-        una revisión de las estructuras formales e informales de la empresa,
-        su comportamiento organizacional, la misión, visión y valores y el grado
-        en el que estos son conocidos y compartidos por todos sus miembros.
+      content: Consiste en un análisis de las diversas variables que afectan el desempeño de las personas en su ámbito laboral.
 
   - section:
-      title: ¿Cuándo iniciar un proceso de Diagnostico Organizacional?
-      content:
-        La condición principal y clave es que exista intención de cambio y compromiso.
-        Ese será el motor de nuestro trabajo.
-        También es necesario que los miembros de la empresa estén dispuestos
-        a abrirse y a brindar la información que se requiera para iniciar el proceso de transformación.
-        Parte de éxito del Diagnostico Organizacional y de nuestro
-        trabajo está dado por el grado de colaboración.
+      title: ¿Cuándo iniciar un Análisis de Clima Laboral?
+      content: "Para iniciar un Análisis de Clima Laboral debe existir la intención de conocer diversos aspectos para poder medir y mejorar:"
+      items:
+        - item: La satisfacción de los colaboradores.
+        - item: La integración de los equipos de trabajos.
+        - item: La productividad de la empresa.
+        - item: La Cultura Organizacional
+  - section:
+      title: ¿Cuál es el objetivo?
+      content: La propuesta es conocer, analizar e identificar las fuentes de conflicto y generadores de insatisfacción y actitudes negativas en la Pyme. Proponer e implantar soluciones a problemas más relevantes que se planteen a través de un plan de mejora, que asegure el éxito.
+  - section:
+      title: Método y técnicas utilizadas
+      items:
+        - item: Entrevistas.
+        - item: Observación.
+        - item: Encuestas.
+        - item: Dinámicas Grupales.        
+        

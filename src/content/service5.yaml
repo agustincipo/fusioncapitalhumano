@@ -1,8 +1,8 @@
 title: Coaching Corporativo
 imageUrl: url('https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg')
 category: Marketing
-color: text-info
-botonColor: info
+color: info
+botonColor: text-info
 content: A través del Diagnóstico Organizacional analizamos la
   situación actual de tu PYME y elaboramos de manera conjunta
   un plan de acción que nos permita trabajar sobre los

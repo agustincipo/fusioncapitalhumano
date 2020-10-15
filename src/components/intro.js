@@ -36,12 +36,12 @@ const Intro = () => {
               brindando y desarrollando herramientas que permitan agregarle
               valor a tu Empresa.
             </h4>
-            <Link to="/pymes "><MDBBtn rounded color="secondary">
+            <Link to="/pymes"><MDBBtn rounded color="secondary">
               Pymes <MDBIcon icon="sitemap" />
             </MDBBtn></Link>
-            <MDBBtn rounded color="secondary">
+            <Link to="/candidatos"><MDBBtn rounded color="secondary">
               Candidatos <MDBIcon icon="user-friends" />
-            </MDBBtn>
+            </MDBBtn></Link>
           </MDBCol>
         </MDBRow>
       </MDBContainer>

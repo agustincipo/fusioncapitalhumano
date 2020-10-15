@@ -13,17 +13,31 @@ content: En fusión diseñamos y dictamos capacitaciones que se ajusten
 modal:
   - section:
       title: ¿En qué consiste?
-      content: El Diagnóstico Organizacional consiste en
-        una revisión de las estructuras formales e informales de la empresa,
-        su comportamiento organizacional, la misión, visión y valores y el grado
-        en el que estos son conocidos y compartidos por todos sus miembros.
-
-  - section:
-      title: ¿Cuándo iniciar un proceso de Diagnostico Organizacional?
       content:
-        La condición principal y clave es que exista intención de cambio y compromiso.
-        Ese será el motor de nuestro trabajo.
-        También es necesario que los miembros de la empresa estén dispuestos
-        a abrirse y a brindar la información que se requiera para iniciar el proceso de transformación.
-        Parte de éxito del Diagnostico Organizacional y de nuestro
-        trabajo está dado por el grado de colaboración.
+        Cada Capacitación creada para tu Pyme se llevará a cabo a través de Jornadas
+        en donde nos centraremos en trabajar en base a tu necesidad y buscando potenciar
+        las habilidades y aptitudes de tus colaboradores.
+ 
+  - section:
+      title: ¿Cuándo invertir tiempo en Capacitación para tu Pyme?
+      content:
+        "El principal punto es entender que el mayor potencial son tus colaboradores.
+        Es por eso que el tiempo que se invierta en capacitarlos generara beneficios
+        no solo para tu negocio sino también para el desarrollo individual, permitiendo
+        contar con los recursos adecuados en el momento adecuado.
+        Dentro de la vida de tu Pyme podés contar con diferentes momentos en donde 
+        surge la necesidad de implementar un Programa de Capacitación :"
+      items:
+        - item: Cuando los resultados de los que se obtiene de una tarea no son los esperados.
+        - item: Cuando se incorporan o modifican tareas.
+        - item: Cuando surge una nueva posición.
+        - item: Cuando existen problemas de desempeño.
+        - item: Cuando existen dificultades en la gestión de equipos.
+        - item: Cuando existen problemas en la toma de decisiones.
+        - item: Cuando debes incorporar habilidades blandas.
+  - section:
+      title: Método y técnicas utilizadas
+      content:
+      items:
+        - item: Workshop presencial / Online
+        - item: Capacitaciones por temática    
