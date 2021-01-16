@@ -20,7 +20,7 @@ const Intro = () => {
       <MDBMask className="rgba-black-strong" />
       <MDBContainer
         className="d-flex justify-content-center align-items-center px-md-3 px-sm-0"
-        style={{ height: '100vh', width: '100%' }}
+        style={{ height: '97vh', width: '100%' }}
       >
         <MDBRow style={{ margin: '50px 0px 0px 0px' }}>
           <MDBCol md="12" className="mb-4 white-text text-center">
