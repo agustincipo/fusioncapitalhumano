@@ -25,6 +25,9 @@ class ContactFormCandidatos extends Component {
     emailValid: false,
     questionValid: false,
     fileValid: null,
+    formValid: null,
+    message: null,
+    messageType: null,
   }
   UPLOAD_FILE_ENDPOINT =
     'https://pyehmuxkh4.execute-api.us-east-1.amazonaws.com/default/uploadPDF'
@@ -59,41 +62,37 @@ class ContactFormCandidatos extends Component {
       this.saveFile().then(result => {
         console.log('RESULT from saveFile()',result)
         this.setState({fileURL:result.url})
-
+        this.sendMail(this.data)
+          .then(response => {
+            console.log('Response FINAL ====>', response)
+            this.setState({
+            message:
+              'Gracias por contactarse con Fusion. Recibira nuestra respuesta en su mail a la brevedad',
+            messageType: 'info',
+            formValid: true
+          })
+          console.log("mensaje" + this.state.formValid)
+        })
+        .catch(error => {
+          this.setState({
+            message:
+              'Ocurrio un error. Lo sentimos, intente mas tarde por favor.',
+            messageType: 'danger',
+            formValid: false
+          })
+        })
       })
-      this.sendMail(this.data).then(response => {
-        console.log('Response FINAL ====>', response)
-      })
-      /*         try {
-          ;(async () => {
-            console.log('Data:', this.data)
-
-            const response = await fetch(this.SEND_MAIL_ENDPOINT, {
-              method: 'POST',
-              mode: 'cors',
-              cache: 'no-cache',
-              body: JSON.stringify(data),
-              headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-              },
-            })
-            console.log(response)
-          })()
-        } catch (error) {
-          console.log(error)
-        }
-      }) 
-
-    }*/
     }
   }
   sendMail = async () => {
+    this.setState({fileURL:this.state.fileURL.split('?')[0]})
     const data = {
       name: this.state.name,
       email: this.state.email,
       question: this.state.question,
-      urlPDF: this.state.fileURL,
+      urlPDF: this.state.fileURL
     }
+    console.log("URLLLLL" + this.state.fileURL)
     const response = await fetch(this.SEND_MAIL_ENDPOINT, {
       method: 'POST',
       mode: 'cors',
@@ -138,6 +137,7 @@ class ContactFormCandidatos extends Component {
           body: blobData,
         })
         this.setState({fileURL:result.url})
+        return result;
       } else {
         console.log('INVALID FILE ')
       }
@@ -234,6 +234,12 @@ class ContactFormCandidatos extends Component {
                   </MDBBtn>
                 </div>
               </form>
+              <FormMessagge
+            messageType={this.state.messageType}
+            message={this.state.message}
+            formValid={this.state.formValid}
+          />
+
             </MDBCol>
           </MDBRow>
         </MDBContainer>
@@ -247,6 +253,13 @@ const FileError = ({ messagge, fileValid }) =>
     <div class="alert alert-danger" role="alert">
       Archivo invalido (debe ser formato PDF y menor a 10MB!)
     </div>
-  ) : null
+  ) : null;
+
+const FormMessagge = ({ message, messageType, formValid }) =>
+  formValid != null ? (
+    <div className= {' alert alert-' + messageType} role="alert"> 
+      <p>{message}</p>
+    </div>
+  ) : null;
 
 export default ContactFormCandidatos

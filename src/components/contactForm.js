@@ -20,7 +20,7 @@ export default class ContactForm extends Component {
     message: null,
     messageType: null,
   }
-  FAKE_GATEWAY_URL = 'https://bvjewnsi2k.execute-api.sa-east-1.amazonaws.com/de'
+  FAKE_GATEWAY_URL = 'https://bvjewnsi2k.execute-api.sa-east-1.amazonaws.com/dev'
 
   handleInputChange = event => {
     const target = event.target
