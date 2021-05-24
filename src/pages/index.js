@@ -21,7 +21,7 @@ const IndexPage = () => {
           <Layout>
           <Intro />
           <main>
-            <TeamSection />
+            {/* <TeamSection /> */}
             <ContactForm />
           </main>
           </Layout>

@@ -20,7 +20,8 @@ export default class ContactForm extends Component {
     message: null,
     messageType: null,
   }
-  FAKE_GATEWAY_URL = 'https://bvjewnsi2k.execute-api.sa-east-1.amazonaws.com/dev'
+  FAKE_GATEWAY_URL =
+    'https://bvjewnsi2k.execute-api.sa-east-1.amazonaws.com/dev'
 
   handleInputChange = event => {
     const target = event.target
@@ -52,7 +53,7 @@ export default class ContactForm extends Component {
             message:
               'Gracias por contactarse con Fusion. Recibira nuestra respuesta en su mail a la brevedad',
             messageType: 'info',
-            formValid: true
+            formValid: true,
           })
         })
         .catch(error => {
@@ -60,7 +61,7 @@ export default class ContactForm extends Component {
             message:
               'Ocurrio un error. Lo sentimos, intente mas tarde por favor.',
             messageType: 'danger',
-            formValid: false
+            formValid: false,
           })
         })
     } else {
@@ -68,21 +69,19 @@ export default class ContactForm extends Component {
         message:
           'Revise los campos invalidos del formulario e intente nuevamente.',
         messageType: 'danger',
-        formValid: false
+        formValid: false,
       })
     }
   }
 
   sendMail = async () => {
-    console.log('FIN del metodo' + response)
-
     const data = {
       name: this.state.name,
       email: this.state.email,
       question: this.state.question,
     }
     const response = await fetch(
-      'https://bvjewnsi2k.execute-api.sa-east-1.amazonaws.com/de',
+      'https://bvjewnsi2k.execute-api.sa-east-1.amazonaws.com/dev',
       {
         method: 'POST',
         mode: 'cors',
@@ -101,7 +100,8 @@ export default class ContactForm extends Component {
     const hello = 'Say Hello to learning Props/State in React!'
 
     return (
-      <div id="section1" className="border-top my-5">
+      // <div id="section1" className="border-top my-5"> Border
+      <div id="section1" className="my-5"> 
         <MDBContainer border>
           <MDBRow border>
             <MDBCol border md="12">
@@ -201,9 +201,8 @@ export default class ContactForm extends Component {
 }
 
 const FormMessagge = ({ message, messageType, formValid }) =>
-  !formValid && formValid != null ? (
-    
-    <div className= {' alert alert-' + messageType} role="alert"> 
+  formValid != null ? (
+    <div className={' alert alert-' + messageType} role="alert">
       <p>{message}</p>
     </div>
   ) : null
